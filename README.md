@@ -2,6 +2,24 @@
 
 <p>AudioRecord 采集音频，lame实时转码</p>
 
+Step 1. Add the JitPack repository to your build file
+
+Add it in your root build.gradle at the end of repositories:
+
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://www.jitpack.io' }
+		}
+	}Copy
+Step 2. Add the dependency
+
+	dependencies {
+	        compile 'com.github.javandoc:lame-library:v1.0'
+	}
+
+
+
 
 Copyright 2017 Huawque
 
