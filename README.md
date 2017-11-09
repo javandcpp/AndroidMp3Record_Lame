@@ -27,6 +27,7 @@ Mp3Recorder mp3Recorder = new MP3Recorder.Builder()
               		.Quality(7)
                         .withBitRate(32)
                         .withPcmFormat(PCMFormat.PCM_16BIT)
+			......
                         .build();
 mp3Recorder.start();
 
