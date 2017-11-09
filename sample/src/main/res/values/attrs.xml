@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright 2017 Huawque
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+  ~ file except in compliance with the License. You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software distributed under
+  ~ the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS
+  ~ OF ANY KIND, either express or implied. See the License for the specific language governing
+  ~ permissions and limitations under the License.
+  ~
+  ~ https://github.com/javandoc/AndroidMp3Record_Lame
+  ~
+  -->
+
+<resources>
+
+
+
+    <array name="circular_default_color_sequence">
+        <item>@color/app_red</item>
+        <item>@color/app_red</item>
+        <item>@color/app_red</item>
+        <item>@color/app_red</item>
+    </array>
+
+    <integer name="circular_default_sweepAnimationDuration">900</integer>
+    <integer name="circular_default_angleAnimationDurationMillis">2000</integer>
+    <integer name="circular_default_miniSweepAngle">30</integer>
+
+    <!--<color name="circular_red">#F90101</color>-->
+    <!--<color name="circular_blue">#0266C8</color>-->
+    <!--<color name="circular_yellow">#F2B50F</color>-->
+    <!--<color name="circular_green">#00933B</color>-->
+    <declare-styleable name="EaseTitleBar">
+        <attr name="titleBarTitle" format="string"/>
+        <attr name="titleBarLeftImage" format="reference"/>
+        <attr name="titleBarRightImage" format="reference"/>
+        <attr name="titleBarBackground" format="reference|color"/>
+        <attr name="titleBarRightText" format="string"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="HorizontalListView">
+        <attr name="dividerWidth" format="dimension" />
+        <attr name="android:divider" />
+        <attr name="android:requiresFadingEdge" />
+        <attr name="android:fadingEdgeLength" />
+    </declare-styleable>
+
+    <declare-styleable name="CirecleView">
+        <attr name="bg_color" format="color"/>
+        <attr name="radius" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="WaveLine">
+        <attr name="line_color" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="InputMethodWidget">
+        <attr name="input_mode">
+            <enum name="comment" value="0"/>
+            <enum name="reply" value="1"/>
+        </attr>
+    </declare-styleable>
+
+
+
+</resources>

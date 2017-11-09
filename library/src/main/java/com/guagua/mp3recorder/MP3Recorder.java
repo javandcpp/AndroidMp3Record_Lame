@@ -14,28 +14,28 @@ import java.util.TimerTask;
 
 public class MP3Recorder {
     //=======================AudioRecord Default Settings=======================
-    private static final int DEFAULT_AUDIO_SOURCE = MediaRecorder.AudioSource.MIC;
+    private int DEFAULT_AUDIO_SOURCE = MediaRecorder.AudioSource.MIC;
     /**
      * 以下三项为默认配置参数。Google Android文档明确表明只有以下3个参数是可以在所有设备上保证支持的。
      */
-    private static final int DEFAULT_SAMPLING_RATE = 48000;//模拟器仅支持从麦克风输入8kHz采样率
-    private static final int DEFAULT_CHANNEL_CONFIG = AudioFormat.CHANNEL_IN_MONO;
+    private int DEFAULT_SAMPLING_RATE = 48000;//模拟器仅支持从麦克风输入8kHz采样率
+    private int DEFAULT_CHANNEL_CONFIG = AudioFormat.CHANNEL_IN_MONO;
     /**
      * 下面是对此的封装
      * private static final int DEFAULT_AUDIO_FORMAT = AudioFormat.ENCODING_PCM_16BIT;
      */
-    private static final PCMFormat DEFAULT_AUDIO_FORMAT = PCMFormat.PCM_16BIT;
+    private PCMFormat DEFAULT_AUDIO_FORMAT = PCMFormat.PCM_16BIT;
 
     //======================Lame Default Settings=====================
-    private static final int DEFAULT_LAME_MP3_QUALITY = 7;
+    private int DEFAULT_LAME_MP3_QUALITY = 7;
     /**
      * 与DEFAULT_CHANNEL_CONFIG相关，因为是mono单声，所以是1
      */
-    private static final int DEFAULT_LAME_IN_CHANNEL = 1;
+    private int DEFAULT_LAME_IN_CHANNEL = 1;
     /**
      * Encoded bit rate. MP3 file will be encoded with bit rate 32kbps
      */
-    private static final int DEFAULT_LAME_MP3_BIT_RATE = 32;
+    private int DEFAULT_LAME_MP3_BIT_RATE = 32;
 
     //==================================================================
 
@@ -53,6 +53,7 @@ public class MP3Recorder {
     private File mRecordFile;
     private TimerTask task;
     private Timer timer = new Timer();
+    private boolean isPausing;
 
     /**
      * 录音开始时间值
@@ -69,6 +70,27 @@ public class MP3Recorder {
     public MP3Recorder() {
 
     }
+
+    /**
+     *
+     * @param SampleRate
+     * @param bitRate
+     * @param quality
+     * @param pcmFormat
+     * @param mRecordFile
+     * @param recordDecibelListener
+     * @param recordTimeListener
+     */
+    public MP3Recorder(int SampleRate, int bitRate, int quality, PCMFormat pcmFormat,File mRecordFile,RecordDecibelListener recordDecibelListener,RecordTimeListener recordTimeListener) {
+        this.DEFAULT_SAMPLING_RATE = SampleRate;
+        this.DEFAULT_LAME_MP3_BIT_RATE = bitRate;
+        this.DEFAULT_LAME_MP3_QUALITY = quality;
+        this.DEFAULT_AUDIO_FORMAT = pcmFormat;
+        this.mRecordFile=mRecordFile;
+        this.mRecordDecibelListener=recordDecibelListener;
+        this.mRecordTimeListener=recordTimeListener;
+    }
+
 
     /**
      * Default constructor. Setup recorder with default sampling rate 1 channel,
@@ -110,6 +132,21 @@ public class MP3Recorder {
     }
 
     /**
+     * 录音暂停
+     */
+    public void pause() {
+        isPausing = true;
+    }
+
+
+    /**
+     * 从暂停状态,恢复继续录音
+     */
+    public void resume() {
+        isPausing = false;
+    }
+
+    /**
      * Start recording. Create an encoding thread. Start record from this
      * thread.
      *
@@ -129,6 +166,10 @@ public class MP3Recorder {
                 android.os.Process.setThreadPriority(android.os.Process.THREAD_PRIORITY_URGENT_AUDIO);
                 while (mIsRecording) {
                     int readSize = mAudioRecord.read(mPCMBuffer, 0, mBufferSize);
+                    if (isPausing) {
+                        LogUtil.LOG_D("recorder", "pause");
+                        continue;
+                    }
                     LogUtil.LOG_D("recorder", "readSize:" + readSize);
                     if (readSize > 0) {
                         mEncodeThread.addTask(mPCMBuffer, readSize);
@@ -211,6 +252,10 @@ public class MP3Recorder {
         return mIsRecording;
     }
 
+    public boolean isPausing() {
+        return isPausing;
+    }
+
     /**
      * Initialize audio recorder
      */
@@ -236,7 +281,7 @@ public class MP3Recorder {
 
         mPCMBuffer = new short[mBufferSize];
         /*
-		 * Initialize lame buffer
+         * Initialize lame buffer
 		 * mp3 sampling rate is the same as the recorded pcm sampling rate 
 		 * The bit rate is 32kbps
 		 * 
@@ -268,4 +313,106 @@ public class MP3Recorder {
     public interface RecordTimeListener {
         void timeCallback(long startTime);
     }
+
+
+    /**
+     * Builder
+     */
+    public static class Builder {
+        //sample rate
+        private int SampleRate = 48000;
+        //bit rate
+        private int bitRate = 32;
+        //channels
+        private int Channels = 2;
+        //bit
+        private PCMFormat pcmformat;
+        //0(high) - 9(low)
+        private int Quality = 7;
+        private RecordTimeListener mTimeListener;
+        private RecordDecibelListener mDecibelValueListener;
+        private File mFile;
+
+        /**
+         * 采样率(44100,48000...)
+         *
+         * @param sampleRate
+         * @return
+         */
+        public Builder withSampleRate(int sampleRate) {
+            this.SampleRate = sampleRate;
+            return this;
+        }
+
+        /**
+         * 比特率 (32 64 96...)
+         *
+         * @param bitRate
+         * @return
+         */
+        public Builder withBitRate(int bitRate) {
+            this.bitRate = bitRate;
+            return this;
+        }
+
+        /**
+         * 声音质量[0(high)-9(low)]
+         *
+         * @param quality
+         * @return
+         */
+        public Builder Quality(int quality) {
+            this.Quality = quality;
+            return this;
+        }
+
+        /**
+         * PCM源数据位数
+         *
+         * @param pcmformat
+         * @return
+         */
+        public Builder withPcmFormat(PCMFormat pcmformat) {
+            this.pcmformat = pcmformat;
+            return this;
+        }
+
+        public Builder withDestFile(File file){
+            this.mFile=file;
+            return this;
+        }
+
+        /**
+         * 分贝值回调
+         * @param listener
+         * @return
+         */
+        public Builder withRecordDecibelListener(RecordDecibelListener listener){
+
+            this.mDecibelValueListener=listener;
+            return this;
+        }
+
+        /**
+         * 录制时间监听
+         * @param listener
+         * @return
+         */
+        public Builder withRecordTimeListener(RecordTimeListener listener){
+            this.mTimeListener=listener;
+            return this;
+        }
+        /**
+         * Build Mp3Record instance
+         *
+         * @return
+         */
+        public MP3Recorder build() {
+            return new MP3Recorder(this.SampleRate, bitRate, Quality, pcmformat,mFile,mDecibelValueListener,mTimeListener);
+
+        }
+
+
+    }
+
 }

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright 2017 Huawque
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+  ~ file except in compliance with the License. You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software distributed under
+  ~ the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS
+  ~ OF ANY KIND, either express or implied. See the License for the specific language governing
+  ~ permissions and limitations under the License.
+  ~
+  ~ https://github.com/javandoc/AndroidMp3Record_Lame
+  ~
+  -->
+
+<resources>
+    <!-- 应用主色 -->
+    <color name="li_color_main_bg">@color/white</color>
+    <!--  应用所有ITEM主色 -->
+    <color name="li_color_main_item_bg">#33ededed</color>
+    <!-- 应用中红色字颜色-->
+    <color name="app_red">#FF0079</color>
+    <color name="li_color_charm_head_red">#FEA2E1</color>
+    <color name="li_color_red_text_color">@color/app_red</color>
+
+    <color name="red_text_recharge">@color/app_red</color>
+
+    <!-- 文字主色 -->
+    <color name="li_text_color_main">#333333</color>
+    <!-- 文字次要色 第一级-->
+    <color name="li_text_color_not_main_1">#7f7f7f</color>
+    <!-- 文字次要色 第二级-->
+    <color name="li_text_color_not_main_2">#b2b2b2</color>
+    <!-- 文字次要色 第三级-->
+    <color name="li_text_color_not_main_3">#c5c5c5</color>
+    <!-- 分割线颜色 -->
+    <color name="li_color_divider_line">#e5e5e5</color>
+    <!-- 页面背景色 -->
+    <color name="li_color_background">#f2f2f2</color>
+    <!-- 点缀色 -->
+    <color name="li_color_embellish">#eea328</color>
+
+    <color name="white">#ffffffff</color>
+    <color name="li_info_white">#CCFFFFFF</color>
+    <color name="li_info_red">#f92e3f</color>
+    <color name="li_room_loading_bg_startcolor">#ff7ed2c4</color>
+    <color name="li_room_loading_bg_endcolor">#ff55a89c</color>
+    <color name="li_room_users_bg_solid">#1f000000</color>
+    <color name="li_room_users_bg_stroke">#ffffffff</color>
+    <color name="li_room_edittext_bg">#bbffffff</color>
+    <color name="li_room_edittext_bg_stroke">#aaaaaaaa</color>
+    <color name="li_room_chat_send_bg">#ff63dac3</color>
+    <color name="li_room_chat_send_bg_p">#ff509a91</color>
+    <color name="li_chat_bg">#24242e</color>
+    <color name="chat_input_layout_bg">#262630</color>
+    <color name="chat_input_layout_bg_apha">#dd262630</color>
+    <color name="chat_input_layout_head_bg_apha">#aa24242e</color>
+    <color name="chat_input_content_bg_apha">#aa2d2d39</color>
+    <color name="chat_input_diliver_bg_apha">#22e0e0e0</color>
+    <color name="chat_content_right_bg">#99D83A51</color>
+    <color name="chat_content_left_bg">#99ffaf24</color>
+    <color name="home_chat_item_bg">#00000000</color>
+    <color name="home_chat_bg">#ffffffff</color>
+    <color name="chat_title_text_selected">@color/app_red</color>
+    <color name="chat_title_text">#cc000000</color>
+    <color name="chat_list_name">@color/li_text_color_main</color>
+    <color name="chat_list_content">@color/li_text_color_not_main_1</color>
+    <drawable name="red_line_normal">#00000000</drawable>
+
+    <color name="li_btn_text_color">@color/app_red</color>
+    <color name="li_home_empty_text_color">#55656565</color>
+
+
+    <color name="chat_header_default_color_0">#997efbeb</color>
+    <color name="chat_header_default_color_1">#99f959ff</color>
+    <color name="chat_header_default_color_2">#99ffb21c</color>
+    <color name="chat_header_default_color_3">#9992ff1c</color>
+    <color name="chat_header_default_color_4">#99fd1908</color>
+    <color name="chat_header_default_color_5">#993eb9f9</color>
+    <color name="chat_header_default_color_6">#998262fc</color>
+    <color name="chat_header_default_color_7">#99fea0cf</color>
+    <color name="chat_header_default_color_8">#990ad700</color>
+    <color name="chat_header_default_color_9">#9918ecff</color>
+
+    <!-- 直播间用户信息弹窗 -->
+    <color name="room_user_info_divider">@color/li_color_divider_line</color>
+    <color name="room_user_info_black">@color/li_text_color_main</color>
+    <color name="room_user_info_gray">@color/li_text_color_not_main_2</color>
+    
+    <!--房间榜单用户聊天用户名称的颜色值-->
+    <color name="room_zong_bang_chat_user_name">#ffea37d0</color>
+    <color name="room_zhou_bang_chat_user_name">#fffe6a3c</color>
+    <!-- system message's header text color -->
+    <color name="li_color_room_system_message_head_text">@color/app_red</color>
+    <!-- normal message's user's name text color -->
+    <color name="li_color_room_msg_user_name_text">#E8C487</color>
+    <!-- normal message's user's name text color -->
+    <color name="li_color_room_msg_notify_msg_text">#FF638B</color>
+    <color name="room_system_message_name">#ffffb20e</color>
+    <color name="room_system_message_content">#ff7380fd</color>
+    <color name="li_room_message_text_color_gold">#E8C487</color>
+
+    <color name="aeaeae">#aeaeae</color>
+    <color name="FEF3F9">#FEF3F9</color>
+    <color name="FDE5F2">#FDE5F2</color>
+    <color name="GREY_F2F2F2">#F2F2F2</color>
+
+    <color name="Black">#000000</color>
+    <color name="black">#000000</color>
+    <color name="black_333333">#333333</color>
+
+
+    <color name="__picker_pager_bg">#CA000000</color>
+    <color name="__picker_selected_bg">#44000000</color>
+    <color name="__picker_black_40">#282828</color>
+    <color name="__picker_common_primary">#f3f3f3</color>
+
+    <color name="__picker_text_40">#282828</color>
+    <color name="__picker_text_80">#505050</color>
+    <color name="__picker_text_120">#787878</color>
+    <color name="__picker_item_photo_border_selected">#ff99cc00</color>
+    <color name="__picker_item_photo_border_n">#33ffffff</color>
+    <color name="colorOverlay">#DDffffff</color>
+    <color name="record_FFA8D2">#FFA8D2</color>
+
+
+    <color name="li_charm_top1_color">#FFBD5A</color>
+    <color name="li_charm_top2_color">#EFBF92</color>
+    <color name="li_charm_top3_color">#DEDEDD</color>
+
+
+    <color name="li_charm_rank_color1">#F65382</color>
+    <color name="li_charm_rank_color2">#9473FF</color>
+    <color name="li_charm_rank_color3">#3ADEFD</color>
+    <color name="li_charm_rank_color4">#66E400</color>
+    <color name="li_charm_rank_color5">#FFD200</color>
+
+    <color name="li_label_view_color1">#F94771</color>
+    <color name="li_label_view_color2">#F187DF</color>
+    <color name="li_label_view_gradation">#BE2417</color>
+    <color name="li_label_view_gradation2">#77BE2417</color>
+</resources>

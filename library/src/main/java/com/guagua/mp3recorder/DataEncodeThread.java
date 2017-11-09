@@ -104,7 +104,7 @@ public class DataEncodeThread extends HandlerThread implements AudioRecord.OnRec
 	 * @return  从缓冲区中读取的数据的长度
 	 * 			缓冲区中没有数据时返回0 
 	 */
-	private int processData() {	
+	private int processData() {
 		if (mTasks.size() > 0) {
 			Task task = mTasks.remove(0);
 			short[] buffer = task.getData();
@@ -119,6 +119,7 @@ public class DataEncodeThread extends HandlerThread implements AudioRecord.OnRec
 				}
 			}
 			return readSize;
+		}else{
 		}
 		return 0;
 	}
