@@ -37,11 +37,22 @@ mRecorder.setRecordFile(new File(Environment.getExternalStorageDirectory(), "aud
 mRecorder.start();
                         
 ```
-<img width="240" height="410" src="https://github.com/javandoc/AndroidMp3Record_Lame/blob/master/resource/sample-MainActivity-11092017201224.png"/>
 
-<img width="240" height="410" src="https://github.com/javandoc/AndroidMp3Record_Lame/blob/master/resource/sample-MainActivity-11092017201231.png"/>
+<div align=center>
 
-<img width="150" height="260" src="https://github.com/javandoc/AndroidMp3Record_Lame/blob/master/resource/test.gif"/>
+<table border="1">
+  
+  <tr>
+   	<td><img width="240" height="410" src="https://github.com/javandoc/AndroidMp3Record_Lame/blob/master/resource/sample-MainActivity-11092017201224.png"/></td>
+	<td><img width="240" height="410" src="https://github.com/javandoc/AndroidMp3Record_Lame/blob/master/resource/sample-MainActivity-11092017201231.png"/></td>
+	<td><img width="150" height="260" src="https://github.com/javandoc/AndroidMp3Record_Lame/blob/master/resource/test.gif"/></td>
+  </tr>
+</table>
+</div>
+
+
+
+
 
 
 
