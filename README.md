@@ -37,7 +37,7 @@ mRecorder.setRecordFile(new File(Environment.getExternalStorageDirectory(), "aud
 mRecorder.start();
                         
 ```
-<img width="240" height="320" src="https://github.com/javandoc/AndroidMp3Record_Lame/blob/master/resource/sample-MainActivity-11092017201224.png"/>
+<img width="320" height="480" src="https://github.com/javandoc/AndroidMp3Record_Lame/blob/master/resource/sample-MainActivity-11092017201224.png"/>
 
 <img width="240" height="320" src="https://github.com/javandoc/AndroidMp3Record_Lame/blob/master/resource/sample-MainActivity-11092017201231.png"/>
 
