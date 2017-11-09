@@ -30,8 +30,9 @@ Mp3Recorder mp3Recorder = new MP3Recorder.Builder()
                         .withBitRate(32)
                         .withPcmFormat(PCMFormat.PCM_16BIT)
                         .build();
+mp3Recorder.start();
+
 or:
- 
 MP3Recorder mRecorder = new MP3Recorder();
 mRecorder.setRecordFile(new File(Environment.getExternalStorageDirectory(), "audio.mp3"));
 mRecorder.start();
@@ -47,9 +48,6 @@ mRecorder.start();
 
 </table>
 </div>
-
-
-
 
 
 
