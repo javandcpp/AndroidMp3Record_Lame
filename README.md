@@ -43,7 +43,7 @@ mRecorder.start();
 <table>
  	<tr><img width="240" height="410" src="https://github.com/javandoc/AndroidMp3Record_Lame/blob/master/resource/sample-MainActivity-11092017201224.png"/></tr>
 	<tr><img width="240" height="410" src="https://github.com/javandoc/AndroidMp3Record_Lame/blob/master/resource/sample-MainActivity-11092017201231.png"/></tr>
-	<tr><img width="150" height="260" src="https://github.com/javandoc/AndroidMp3Record_Lame/blob/master/resource/test.gif"/></tr>
+	<tr><img width="240" height="420" src="https://github.com/javandoc/AndroidMp3Record_Lame/blob/master/resource/test.gif"/></tr>
 
 </table>
 </div>
