@@ -2,30 +2,6 @@
 
 <p>AudioRecord采集lame转码</p>
 
-Use example：
-
-```
-
-
-Mp3Recorder mp3Recorder = new MP3Recorder.Builder()
-              			.withSampleRate(48000)
-              			.Quality(7)
-                        .withBitRate(32)
-                        .withPcmFormat(PCMFormat.PCM_16BIT)
-                        .build();
-                        
- or:
- 
- 
-MP3Recorder mRecorder = new MP3Recorder();
-mRecorder.setRecordFile(new File(Environment.getExternalStorageDirectory(), "audio.mp3"));
-mRecorder.start();
-                        
-```
-
-
-
-
 Step 1. Add the JitPack repository to your build file
 
 Add it in your root build.gradle at the end of repositories:
@@ -43,6 +19,29 @@ Step 2. Add the dependency
 	}
 
 
+
+
+
+Use example：
+```
+Mp3Recorder mp3Recorder = new MP3Recorder.Builder()
+              		.withSampleRate(48000)
+              		.Quality(7)
+                        .withBitRate(32)
+                        .withPcmFormat(PCMFormat.PCM_16BIT)
+                        .build();
+or:
+ 
+MP3Recorder mRecorder = new MP3Recorder();
+mRecorder.setRecordFile(new File(Environment.getExternalStorageDirectory(), "audio.mp3"));
+mRecorder.start();
+                        
+```
+<img width="240" height="320" src="https://github.com/javandoc/AndroidMp3Record_Lame/blob/master/resource/sample-MainActivity-11092017201224.png"/>
+
+<img width="240" height="320" src="https://github.com/javandoc/AndroidMp3Record_Lame/blob/master/resource/sample-MainActivity-11092017201231.png"/>
+
+<img width="240" height="320" src="https://github.com/javandoc/AndroidMp3Record_Lame/blob/master/resource/test.gif"/>
 
 
 
