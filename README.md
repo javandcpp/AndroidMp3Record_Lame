@@ -1,6 +1,4 @@
-<h1>android 录音mp3</h1>
-
-<p>AudioRecord采集lame转码</p>
+<h1>AudioRecord capture lame transcoding mp3.</h1>
 
 Step 1. Add the JitPack repository to your build file
 
