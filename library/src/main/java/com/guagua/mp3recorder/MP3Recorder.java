@@ -81,7 +81,7 @@ public class MP3Recorder {
      * @param recordDecibelListener
      * @param recordTimeListener
      */
-    public MP3Recorder(int SampleRate, int bitRate, int quality, PCMFormat pcmFormat,File mRecordFile,RecordDecibelListener recordDecibelListener,RecordTimeListener recordTimeListener) {
+    private MP3Recorder(int SampleRate, int bitRate, int quality, PCMFormat pcmFormat,File mRecordFile,RecordDecibelListener recordDecibelListener,RecordTimeListener recordTimeListener) {
         this.DEFAULT_SAMPLING_RATE = SampleRate;
         this.DEFAULT_LAME_MP3_BIT_RATE = bitRate;
         this.DEFAULT_LAME_MP3_QUALITY = quality;
