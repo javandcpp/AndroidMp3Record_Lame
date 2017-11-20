@@ -1,24 +1,5 @@
 <h1>AudioRecord capture lame transcoding mp3.</h1>
 
-Step 1. Add the JitPack repository to your build file
-
-Add it in your root build.gradle at the end of repositories:
-
-	allprojects {
-		repositories {
-			...
-			maven { url 'https://www.jitpack.io' }
-		}
-	}
-Step 2. Add the dependency
-
-	dependencies {
-	        compile 'com.github.javandoc:lame-library:v1.0'
-	}
-
-
-
-
 
 Use example：
 ```
@@ -41,12 +22,31 @@ mRecorder.start();
 <div align=center>
 
 <table>
- 	<tr><img width="240" height="410" src="https://github.com/javandoc/AndroidMp3Record_Lame/blob/master/resource/sample-MainActivity-11092017201224.png"/></tr>
-	<tr><img width="240" height="410" src="https://github.com/javandoc/AndroidMp3Record_Lame/blob/master/resource/sample-MainActivity-11092017201231.png"/></tr>
-	<tr><img width="240" height="420" src="https://github.com/javandoc/AndroidMp3Record_Lame/blob/master/resource/test.gif"/></tr>
+ 	<tr><img width="240" height="420" src="https://github.com/javandoc/AndroidMp3Record_Lame/blob/master/resource/sample-MainActivity-11092017201224.png"/></tr>
+	<tr><img width="240" height="420" src="https://github.com/javandoc/AndroidMp3Record_Lame/blob/master/resource/sample-MainActivity-11092017201231.png"/></tr>
+	<tr><img width="240" height="420" src="https://github.com/javandoc/AndroidMp3Record_Lame/blob/master/resource/screen_shot.gif"/></tr>
 
 </table>
 </div>
+
+
+
+Step 1. Add the JitPack repository to your build file
+
+Add it in your root build.gradle at the end of repositories:
+
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://www.jitpack.io' }
+		}
+	}
+Step 2. Add the dependency
+
+	dependencies {
+	        compile 'com.github.javandoc:lame-library:v1.0'
+	}
+
 
 
 
